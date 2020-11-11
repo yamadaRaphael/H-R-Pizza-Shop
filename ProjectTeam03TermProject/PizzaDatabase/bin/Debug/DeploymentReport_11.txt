@@ -1,0 +1,37 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Customer]
+       [dbo].[Order]
+       [dbo].[OrderDetail]
+       [dbo].[Pizza]
+       [dbo].[PizzaSize]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[Order].[IX_CustomerId] (Index)
+       [dbo].[OrderDetail].[IX_DetailOrderId] (Index)
+       [dbo].[OrderDetail].[IX_DetailPizzaId_DetailPizzaSize] (Index)
+       [dbo].[PizzaSize].[IX_SizePizzaId] (Index)
+       [dbo].[FK_dbo.Order_dbo.Customer_CustomerId] (Foreign Key)
+       [dbo].[FK_dbo.OrderDetail_dbo.Order_DetailOrderId] (Foreign Key)
+       [dbo].[FK_dbo.OrderDetail_dbo.PizzaSize_DetailPizzaId_DetailPizzaSize] (Foreign Key)
+       [dbo].[FK_dbo.PizzaSize_dbo.Pizza_SizePizzaId] (Foreign Key)
+     Table rebuild
+       [dbo].[Customer] (Table)
+       [dbo].[Order] (Table)
+       [dbo].[OrderDetail] (Table)
+       [dbo].[Pizza] (Table)
+       [dbo].[PizzaSize] (Table)
+     Create
+       [dbo].[FK_Order_ToCustomer] (Foreign Key)
+       [dbo].[FK_DetailOrder_ToOrder] (Foreign Key)
+       [dbo].[FK_DetailOrder_ToPizzaSize] (Foreign Key)
+       [dbo].[FK_PizzaSize_Pizza] (Foreign Key)
+
+** Supporting actions
